@@ -25,6 +25,8 @@ const LotteryPage = () => {
     const [lotteryResult, setLotteryResult] = useState<LotteryResult | null>(null)
     const [numberOfWinners, setNumberOfWinners] = useState<number>(1)
     const [showPickWinnerButton, setShowPickWinnerButton] = useState<boolean>(false);
+    console.log(lottery)
+    console.log(lotteryResult)
     const fetchLottery = async () => {
         try {
             const data = await getLottery(Number(lotteryId));
@@ -102,7 +104,7 @@ const LotteryPage = () => {
 
 
     useEffect(() => {
-        if (lottery && !lottery.drawn && lottery.expiresAt && Date.now() < lottery.expiresAt) {
+        if (lottery && !lottery.drawn && lottery.expiresAt && Date.now() > lottery.expiresAt) {
             const timer = setTimeout(() => {
                 setShowPickWinnerButton(true);
             }, lottery.expiresAt - Date.now());
