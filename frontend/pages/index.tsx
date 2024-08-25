@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import HelloExample from "@/components/HelloExample";
 import { useEffect, useState } from "react";
 import { getLotteries, createLottery } from "@/services/blockchain";
 import { Lotteries } from "@/components/Lotteries";

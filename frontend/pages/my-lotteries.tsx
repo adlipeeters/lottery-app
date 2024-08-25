@@ -28,7 +28,7 @@ const dinamicProperties = [
     { property: "participants", label: "Participants" },
 ]
 
-const myLotteries = () => {
+const NyLotteries = () => {
     const { myLotteries: lotteries } = useLotteryStore();
     // const lotteries = useLotteryStore(state => state.myLotteries);
     const [lotteryImportId, setLotteryImportId] = useState<number>(0);
@@ -123,4 +123,4 @@ const myLotteries = () => {
     )
 }
 
-export default myLotteries
+export default NyLotteries

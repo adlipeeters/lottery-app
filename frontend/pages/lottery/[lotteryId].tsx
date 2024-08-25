@@ -160,7 +160,7 @@ const LotteryPage = () => {
                                         <div className="text-lg font-bold flex flex-col gap-2 items-center"><span>Share per Winner</span> <span className="text-green-500"> ETH {lotteryResult.sharePerWinner}</span></div>
                                         <div className="text-lg font-bold flex flex-col gap-2 items-center justify-center text-center"><span>Winners</span> <div className="">
                                             {lotteryResult.winners.map((winner, index) => (
-                                                <div className="grid grid-cols-3 items-center gap-4 text-center">
+                                                <div className="grid grid-cols-3 items-center gap-4 text-center" key={index}>
                                                     <p className="text-xs">Account</p>
                                                     <p className="text-xs">Ticket</p>
                                                     <p className="text-xs">Payment Status</p>
