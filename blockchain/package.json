@@ -1,0 +1,33 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
+  "main": "deploy.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "aes-js": "^4.0.0-beta.5",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.4.7",
+    "fs-extra": "^11.2.0",
+    "graceful-fs": "^4.2.11",
+    "jsonfile": "^6.1.0",
+    "universalify": "^2.0.1",
+    "ws": "^8.17.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}
