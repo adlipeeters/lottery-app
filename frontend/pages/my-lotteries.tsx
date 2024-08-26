@@ -65,7 +65,7 @@ const NyLotteries = () => {
                     <CardDescription>
                     </CardDescription>
                 </CardHeader>
-                <CardContent className='grid grid-cols-2 gap-3'>
+                <CardContent className='grid lg:grid-cols-2 gap-3'>
                     {lotteries.map((lottery: Lottery, index) => (
                         <Card className={``} key={index}>
                             <CardHeader>

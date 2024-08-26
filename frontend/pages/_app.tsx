@@ -8,7 +8,7 @@ import type { AppProps } from "next/app";
 export default function App({ Component, pageProps }: AppProps) {
 
   return <Providers>
-    <div className="fixed z-10 w-full px-2">
+    <div className="fixed z-10 w-full px-2 z-30">
       <Navbar />
     </div>
     <div className="px-2">
