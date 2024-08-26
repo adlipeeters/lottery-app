@@ -149,7 +149,10 @@ const importLuckyNumbers = async (id: number, luckyNumbers: string[]) => {
             // }
         );
         tx.wait()
-        await getMyLotteries();
+            .then(async () => {
+                await getMyLotteries();
+            })
+
     } catch (error) {
         reportError(error)
     }
@@ -178,9 +181,8 @@ const performDraw = async (id: number, numberOfWinners: number) => {
         const contract = await getWriteContract();
         if (!contract) return reportError("Error creating contract");
 
-        tx = await contract.randomlySelectWinners(id, numberOfWinners,
-        )
-        tx.wait()
+        tx = await contract.randomlySelectWinners(id, numberOfWinners)
+        // tx.wait()
         return tx;
     } catch (error) {
         reportError(error)
@@ -275,6 +277,7 @@ const structuredResult = (result: any) => {
         timestamp: Number(result[3]),
         sharePerWinner: fromWei(result.sharePerWinner || 0),
         winners: [] as { account: string, ticket: string, paid: boolean }[],
+        requestToChainlinkSent: result.requestToChainlinkSent || false,
     }
     for (let i = 0; i < result.winners.length; i++) {
         LotteryResult.winners.push({
@@ -283,7 +286,6 @@ const structuredResult = (result: any) => {
             paid: result.winners[i][2],
         })
     }
-    console.log(LotteryResult)
     return LotteryResult
 }
 

@@ -48,6 +48,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         // bool fulfilled;
         bool exists;
         uint256[] randomNumber;
+        bool requestToChainlinkSent;
     }
 
     struct RequestIdToLotteryId {
@@ -281,7 +282,10 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
             numOfWinners <= lotteryParticipants[id].length,
             "Number of winners exceeds number of participants"
         );
-
+        require(
+            !lotteryResult[id].requestToChainlinkSent,
+            "Request to chainlink already sent"
+        );
         requestId = s_vrfCoordinator.requestRandomWords(
             VRFV2PlusClient.RandomWordsRequest({
                 keyHash: keyHash,
@@ -304,6 +308,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         lotteryResult[id].sharePerWinner = 0;
         lotteryResult[id].exists = true;
         lotteryResult[id].requestId = requestId;
+        lotteryResult[id].requestToChainlinkSent = true;
 
         requestIdToLotteryId[requestId] = RequestIdToLotteryId({
             lotteryId: id,

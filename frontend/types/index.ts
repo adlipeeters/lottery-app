@@ -45,6 +45,7 @@ export interface LotteryResult {
     timestamp: number
     sharePerWinner: string
     winners: Winner[]
+    requestToChainlinkSent: boolean
 }
 
 export interface Winner {
