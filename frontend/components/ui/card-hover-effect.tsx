@@ -69,7 +69,7 @@ export const HoverEffect = ({
                             <CardTitle>{item.title}</CardTitle>
                             <CardDescription>{item.description}</CardDescription>
                             <CardDescription><span className="font-bold">Owner:</span> {truncate({ text: item.owner, startChars: 6, endChars: 4, maxLength: 16 })}</CardDescription>
-                            <CardDescription><span className="font-bold">Prize:</span> {item.ticketPrice * item.participants} ETH</CardDescription>
+                            <CardDescription><span className="font-bold">Prize:</span> {(item.ticketPrice * item.participants).toFixed(4)} ETH</CardDescription>
                         </div>
                         <div className="flex justify-end">
                             <Button className="">
