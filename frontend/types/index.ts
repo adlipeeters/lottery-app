@@ -9,7 +9,7 @@ export interface CreateLottery {
     title: string
     description: string
     imageUrl: string
-    prize: number
+    // prize: number
     ticketPrice: number
     expiresAt: number
 }

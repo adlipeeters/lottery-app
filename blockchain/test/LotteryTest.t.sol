@@ -32,7 +32,7 @@ contract LotteryTest is Test {
             "Lottery 1",
             "Description 1",
             "image1.png",
-            1 ether,
+            // 1 ether,
             0.1 ether,
             block.timestamp + 1 days
         );
@@ -47,7 +47,7 @@ contract LotteryTest is Test {
             console.log("Title:", lotteries[0].title);
             console.log("Description:", lotteries[0].description);
             console.log("Image:", lotteries[0].image);
-            console.log("Prize:", lotteries[0].prize);
+            // console.log("Prize:", lotteries[0].prize);
             console.log("Ticket Price:", lotteries[0].ticketPrice);
             console.log("Owner:", lotteries[0].owner);
             console.log("Created At:", lotteries[0].createdAt);
@@ -56,7 +56,7 @@ contract LotteryTest is Test {
 
         assertEq(lotteries.length, 1);
         assertEq(lotteries[0].title, "Lottery 1");
-        assertEq(lotteries[0].prize, 1 ether);
+        // assertEq(lotteries[0].prize, 1 ether);
     }
 
     function testBuyTicket() public {
@@ -65,7 +65,7 @@ contract LotteryTest is Test {
             "Lottery 1",
             "Description 1",
             "image1.png",
-            1 ether,
+            // 1 ether,
             0.1 ether,
             block.timestamp + 1 days
         );
@@ -97,7 +97,7 @@ contract LotteryTest is Test {
             "Lottery Test",
             "Test Description",
             "testImage.png",
-            5 ether,
+            // 5 ether,
             0.1 ether,
             block.timestamp + 1 days
         );

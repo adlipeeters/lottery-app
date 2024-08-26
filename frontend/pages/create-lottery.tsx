@@ -46,9 +46,9 @@ const FormSchema = z.object({
     imageUrl: z.string().url({
         message: "Invalid URL.",
     }),
-    prize: z.preprocess((val) => parseFloat(val as string), z.number().min(0.1, {
-        message: "Prize must be at least 0.1.",
-    })),
+    // prize: z.preprocess((val) => parseFloat(val as string), z.number().min(0.1, {
+    //     message: "Prize must be at least 0.1.",
+    // })),
     ticketPrice: z.preprocess((val) => parseFloat(val as string), z.number().min(0.05, {
         message: "Ticket price must be at least 0.05.",
     })),
@@ -67,7 +67,7 @@ const CreateLottery = () => {
             title: "",
             description: "",
             imageUrl: "https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/512/Ethereum-ETH-icon.png",
-            prize: 0,
+            // prize: 0,
             ticketPrice: 0,
             expiresAt: new Date(),
         },
@@ -80,7 +80,7 @@ const CreateLottery = () => {
                 title: data.title,
                 description: data.description,
                 imageUrl: data.imageUrl,
-                prize: data.prize,
+                // prize: data.prize,
                 ticketPrice: data.ticketPrice,
                 expiresAt: data.expiresAt.getTime(),
             })
@@ -175,7 +175,7 @@ const CreateLottery = () => {
                                     </FormItem>
                                 )}
                             />
-                            <FormField
+                            {/* <FormField
                                 control={form.control}
                                 name="prize"
                                 render={({ field }) => (
@@ -190,12 +190,11 @@ const CreateLottery = () => {
                                             />
                                         </FormControl>
                                         <FormDescription>
-                                            {/* This is your public display name. */}
                                         </FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
-                            />
+                            /> */}
                             <FormField
                                 control={form.control}
                                 name="ticketPrice"

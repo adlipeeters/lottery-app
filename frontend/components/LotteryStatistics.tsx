@@ -10,7 +10,7 @@ import { Activity, CreditCard, DollarSign, Timer, Users } from 'lucide-react'
 import Countdown from './Countdown'
 
 interface Props {
-    prize: number,
+    // prize: number,
     ticketPrice: number,
     participants: number,
     winners: number,
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const LotteryStatistics = ({
-    prize,
+    // prize,
     ticketPrice,
     participants,
     winners,
@@ -34,7 +34,7 @@ const LotteryStatistics = ({
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                    <div className="text-2xl font-bold">ETH {prize}</div>
+                    <div className="text-2xl font-bold">ETH {(ticketPrice * participants).toFixed(4)}</div>
                     <p className="text-xs text-muted-foreground">
                         {/* +20.1% from last month */}
                     </p>

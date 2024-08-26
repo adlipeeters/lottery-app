@@ -76,7 +76,7 @@ async function createDummyLottery(contract, wallet, provider) {
     const title = "Test Lottery";
     const description = "This is a test lottery";
     const image = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/768px-Ethereum-icon-purple.svg.png";
-    const prize = ethers.utils.parseEther("1.0");
+    // const prize = ethers.utils.parseEther("1.0");
     const ticketPrice = ethers.utils.parseEther("0.01");
 
     // Set the expiry date to 10 hours from now
@@ -86,7 +86,7 @@ async function createDummyLottery(contract, wallet, provider) {
 
     try {
         // Create the lottery with the specified details
-        const tx = await contract.createLottery(title, description, image, prize, ticketPrice, expiresAt);
+        const tx = await contract.createLottery(title, description, image, ticketPrice, expiresAt);
         await tx.wait(); // Wait for the transaction to be mined
         console.log("Dummy lottery created!");
     } catch (error) {

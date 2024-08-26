@@ -19,7 +19,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         string title;
         string description;
         string image;
-        uint256 prize;
+        // uint256 prize;
         uint256 ticketPrice;
         uint256 participants;
         uint256 winners;
@@ -93,7 +93,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         string title,
         string description,
         string image,
-        uint256 prize,
+        // uint256 prize,
         uint256 ticketPrice,
         uint256 expiresAt
     );
@@ -136,14 +136,14 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         string memory title,
         string memory description,
         string memory image,
-        uint256 prize,
+        // uint256 prize,
         uint256 ticketPrice,
         uint256 expiresAt
     ) public {
         require(bytes(title).length > 0, "title cannot be empty");
         require(bytes(description).length > 0, "description cannot be empty");
         require(bytes(image).length > 0, "image cannot be empty");
-        require(prize > 0 ether, "prize cannot be zero");
+        // require(prize > 0 ether, "prize cannot be zero");
         require(ticketPrice > 0 ether, "ticketPrice cannot be zero");
         require(
             expiresAt > currentTime(),
@@ -157,7 +157,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
         lottery.title = title;
         lottery.description = description;
         lottery.image = image;
-        lottery.prize = prize;
+        // lottery.prize = prize;
         lottery.ticketPrice = ticketPrice;
         lottery.owner = msg.sender;
         lottery.createdAt = currentTime();
@@ -170,7 +170,7 @@ contract Lottery is VRFConsumerBaseV2Plus, ReentrancyGuard {
             lottery.title,
             lottery.description,
             lottery.image,
-            lottery.prize,
+            // lottery.prize,
             lottery.ticketPrice,
             lottery.expiresAt
         );

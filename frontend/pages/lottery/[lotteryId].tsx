@@ -153,7 +153,7 @@ const LotteryPage = () => {
                         <LotteryStatistics
                             participants={participants.length}
                             winners={lottery?.winners || 0}
-                            prize={lottery?.prize || 0}
+                            // prize={lottery?.prize || 0}
                             ticketPrice={lottery?.ticketPrice || 0}
                             timestamp={lottery?.expiresAt || 0}
                         />

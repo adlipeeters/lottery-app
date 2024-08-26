@@ -19,7 +19,7 @@ import Link from 'next/link'
 import { Fragment, useEffect, useState } from 'react'
 
 const dinamicProperties = [
-    { property: "prize", label: "Prize" },
+    // { property: "prize", label: "Prize" },
     { property: "ticketPrice", label: "Ticket price" },
     { property: "participants", label: "Participants" },
     { property: "drawsAt", label: "Draws at" },

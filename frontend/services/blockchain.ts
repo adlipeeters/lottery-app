@@ -108,7 +108,7 @@ const checkWallet = async () => {
     }
 }
 
-const createLottery = async ({ title, description, imageUrl, prize, ticketPrice, expiresAt }: CreateLottery) => {
+const createLottery = async ({ title, description, imageUrl, ticketPrice, expiresAt }: CreateLottery) => {
     try {
         if (!ethereum) return reportError('Please install Metamask')
         // const wallet = useWalletStore.getState().wallet
@@ -118,7 +118,7 @@ const createLottery = async ({ title, description, imageUrl, prize, ticketPrice,
             title,
             description,
             imageUrl,
-            toWei(prize),
+            // toWei(prize),
             toWei(ticketPrice),
             expiresAt,
             // {
@@ -239,7 +239,7 @@ const structureLotteries = (lotteries: any) =>
         title: lottery.title,
         description: lottery.description,
         owner: lottery.owner.toLowerCase(),
-        prize: fromWei(lottery.prize),
+        // prize: fromWei(lottery.prize),
         ticketPrice: fromWei(lottery.ticketPrice),
         image: lottery.image,
         createdAt: formatDate(Number(lottery.createdAt)),
